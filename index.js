@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:4200"],
+    origin: ["http://localhost:3000", "http://localhost:4200", 'https://applergic-front-i7nc81inr-agonzalezbarjola.vercel.app'],
     credentials: true,
   })
 );
@@ -45,7 +45,6 @@ app.use(
 app.use(express.urlencoded({ limit: "5mb", extended: true }));
 
 app.use("/api/users", UserRoutes);
-//esta ruta de products se cambio a product en singular por un error al hacer la peticion
 app.use("/api/products", ProductRoutes);
 app.use("/api/allergens", AllergenRoutes);
 app.use("/api/ratings", RatingRoutes);
